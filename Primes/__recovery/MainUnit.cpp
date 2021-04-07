@@ -10,16 +10,17 @@
 #include <cmath>
 #include <vector>
 
+#include <stdio.h>
+
 #ifdef _WIN32
 #include <tchar.h>
-#include <stdio.h>
 #else
   typedef char _TCHAR;
   #define _tmain main
 #endif
 
-#include <stdio.h>
-
+using namespace std;
+using namespace std::chrono;
 class primeSieve
 {
 	private:
@@ -118,11 +119,10 @@ class primeSieve
           return count;
 		}
 };
-
 int _tmain(int argc, _TCHAR* argv[]) 
 {
     auto passes = 0;
-	 auto tStart = steady_clock::now();
+	auto tStart = steady_clock::now();
 
     while (true)
     {
